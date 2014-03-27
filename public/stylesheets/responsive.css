@@ -1,7 +1,18 @@
 @media only screen and (max-width: 768px) {
 
-
+	header h1 { text-align: center; }
 	h1 { font-size: 3rem; }
 	h2 { font-size: 2rem; }
 
+	.details { padding-left: 0.5rem; padding-right: 0.5rem; }
+	.back-to-results { display: block; }
+
+	.details ol.results-table li.results-row li.logo,
+	.details ol.results-table li.results-row li.provider,
+	.details ol.results-table li.results-row li.cover-type,
+	.details ol.results-table li.results-row li.price,
+	.details ol.results-table li.results-row li.buy { width: 49%; display: inline-block; float: left;}
+
+	.details ol.results-table li.results-row li.provider,
+	.details ol.results-table li.results-row li.buy { float: right; }	
 }
