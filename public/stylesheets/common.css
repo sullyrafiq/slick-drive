@@ -232,21 +232,27 @@ footer {
 }
 
 .button {
-	max-width: 90%;
-	font-size: 1.2rem;
-	margin: 0.6em auto;
-	font-weight: bold;
-	border: 0;
-	cursor: pointer;
-	display: block;
-	padding: 0.6em 1em;
-	text-align: center;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	background-color: #50A71A;
-	color: #FFFFFF;
-	-webkit-appearance: none;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgba(186, 69, 103, 1);
+    border-radius: 25px;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+	font-family: Arial, sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 90%;
+	margin: 10px auto;
 }
 
 /*----------------------------------------------------------------------------------------------*/
@@ -259,7 +265,7 @@ footer {
     src: url('typefaces/proximanova-black-webfont.eot?#iefix') format('embedded-opentype'), url('typefaces/proximanova-black-webfont.woff') format('woff'), url('typefaces/proximanova-black-webfont.ttf') format('truetype'), url('typefaces/proximanova-black-webfont.svg#ProximaNovaBlack') format('svg');
 }
 
-
+.display-none {display: none;}
 
 .msm-bar {
 	background-color: #562873;
@@ -277,14 +283,17 @@ footer {
 }
 
 .msm-bar .container div {float: left;}
+.msm-bar .container div.button-container {float: none; display: inline-block;}
 
-.signin { background-color: #ffffff; border-radius: 7px; padding: 10px;margin: 20px 0 20px 150px; width:55%;}
-.signin h3 {color: #00aeef; font-size: 18px; margin:0 0 10px 0; }
-.signin h3 strong {font-family: 'ProximaBold'; font-size: 20px;}
+
+.signin, .signedin { background-color: #ffffff; border-radius: 7px; padding: 10px;margin: 20px 0 20px 150px; width:55%;}
+.signin h3, .signedin h3 {color: #00aeef; font-size: 18px; margin:0 0 10px 0; }
+.signin h3 strong, .signedin h3 strong {font-family: 'ProximaBold'; font-size: 20px;}
 .signin input[type='email'],
 .signin input[type='password'] { background-color: white; border: 2px solid #DEDEDE; -webkit-appearance: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;box-sizing: border-box; padding: 10px 0 10px 10px; width: 40%; border-radius: 5px; }
 
-.signin .btn {
+.signin .btn,
+.signedin .btn {
     text-align: center;
     font-size: 16px;
     background-color: #48A415;
@@ -319,8 +328,24 @@ footer {
 	.signin .btn {font-size: 14px;}
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 768px) {
 	.msm-bar .header-text {display: none;}
+	.msm-bar .signin { width: 70%;}
+}
+
+@media (max-width: 767px) {
+	.msm-bar .signin .btn {text-align: center; margin: 20px auto 0; }
+}
+
+@media (max-width: 400px) {
+	.msm-bar .container {background:none;}
+	.msm-bar .signin {margin: 20px 2%; width: auto;}
+	.msm-bar .signin input[type='email'],
+	.msm-bar .signin input[type='password'] {width:48%;}
+
+	.msm-bar .signin .button-container {width: 100%;}
+	.msm-bar .signin .btn {text-align: center; margin: 20px auto 0; padding: 20px; width: 50%; }
+	.msm-bar .signin .powered-by {display: block; float: right; margin-top: 10px;}
 }
 
 
@@ -331,6 +356,7 @@ footer {
 ol.results-table {
 	margin: 0;
 	padding: 0;
+	display: block;
 }
 
 li.results-row {
@@ -358,7 +384,7 @@ li.results-row {
 		}
 
 			li.results-row li.logo {
-				width: 30%;
+				width: 25%;
 				padding: 0 10px 0 0;
 				vertical-align: middle;
 			}
@@ -406,3 +432,28 @@ li.results-row {
 			text-indent: -2000px;
 			margin: 0;
 		}
+
+.details { display: none; }
+
+.details h4 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.details h4 strong { font-family: 'ProximaBold'; font-size: 1.4rem; }
+
+.details ol.results-table li.results-row.qoutes { padding: 10px; }
+.details ol.results-table li.results-row li.logo { width: 100px; padding: 10px; text-align: center; }
+.details ol.results-table li.results-row li.provider,
+.details ol.results-table li.results-row li.cover-type { width: 20%; font-weight: bold; font-size: 0.875rem; }
+.details ol.results-table li.results-row li.cover-type { font-weight: normal; }
+
+.details ol.results-table li.results-row li.price {
+	color: rgba(186, 69, 103, 1);
+	font-size: 1.4rem;
+	font-weight: 900;
+	padding: 10px 0 20px;
+	width: 20%;
+}
+.details ol.results-table li.results-row li.buy { width: 20%; text-align: center; }
+
+.back-to-results { display: none; }
