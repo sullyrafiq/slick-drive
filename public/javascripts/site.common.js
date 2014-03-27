@@ -1,15 +1,9 @@
 $(document).ready(function () {
-	$('.sidebar-toggle').on('click', function() {
-		$('body').toggleClass('is-sidebar-expanded');
-		return false;
-	});
+	$('a.details-link').on('click', function(e) {
 
-	$('.details-link').on('click', function() {
-		$('#content').toggleClass('is-details-expanded');
-		return false;
-	});
-});
+		//$('#widgetVehicle').html('');
+		//$('#widgetPrice').html($(this).find('.price').html());
 
-$(document).scroll(function () {
-    
+		return false;
+	})
 });
