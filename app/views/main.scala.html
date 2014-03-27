@@ -5,11 +5,122 @@
 <html>
     <head>
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=1">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/lib/normalise.css")" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/lib/grid.css")" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/common.css")" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/responsive.css")" type="text/css" />
+
+		<!--[if lt IE 9]>
+		<script src="@routes.Assets.at("stylesheets/ie.css")"></script>
+		<script src="@routes.Assets.at("javascripts/thirdparty/html5shiv.js")"></script>
+		<script src="@routes.Assets.at("javascripts/thirdparty/html5shiv-printshiv.js")"></script>
+		<![endif]-->
+
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
-        @content
+    	<div id="wrapper" class="home">
+			<header>
+				<div class="container">
+					<h1>
+						<img src="@routes.Assets.at("images/slickdrive-logo.png")" alt="Slick Drive" />
+					</h1>
+					<a id="responsive-menu-button" href="#sidr-main">Menu</a>
+				</div>
+				<nav id="nav">
+					<ul class="container">
+						<li>
+							<a href="index.html" title="Buying">Buying</a>
+						</li>
+						<li>
+							<a href="index.html" title="Selling">Selling</a>
+						</li>
+						<li>
+							<a href="index.html" title="New cars &amp; reviews">New cars &amp; reviews</a>
+						</li>
+						<li>
+							<a href="index.html" title="Motoring products">Motoring products</a>
+						</li>
+						<li>
+							<a href="index.html" title="Other vehicles">Other vehicles</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="msm-bar">
+					<div class="container">
+						<div class="signin">
+							<h3>Sign in with MoneySuperMarket to compare your best deals on car insurance and breakdown cover</h3>
+							<input type="text" name="EmailAddress" id="emailAddress" placeholder="Email" maxlength="50" />
+							<input type="password" name="Password" id="password" placeholder="Password" maxlength="20" />
+							<input type="submit" value="submit" />
+						</div>
+					</div>
+				</div>
+			</header>
+			<aside class="sidebar">
+				<ul class="sidebar-toggles">
+					<li>
+						<a href="#" class="sidebar-toggle">
+							<b class="sidebar-toggle-bar"></b>
+							<b class="sidebar-toggle-bar"></b>
+							<b class="sidebar-toggle-bar"></b>
+							<span class="srt">Toggle Sidebar</span>
+						</a>
+					</li>
+				</ul>
+				<nav>
+					<ol class="contents">
+						<li>
+							<a href="index.html" title="Buying">
+								<i aria-hidden="true"></i>
+								Buying
+							</a>
+						</li>
+						<li>
+							<a href="index.html" title="Selling">
+								<i aria-hidden="true"></i>
+								Selling
+							</a>
+						</li>
+						<li>
+							<a href="index.html" title="New cars &amp; reviews">
+								<i aria-hidden="true"></i>
+								New cars &amp; reviews
+							</a>
+						</li>
+						<li>
+							<a href="index.html" title="Motoring products">
+								<i aria-hidden="true"></i>
+								Motoring products
+							</a>
+						</li>
+						<li>
+							<a href="index.html" title="Other vehicles">
+								<i aria-hidden="true"></i>
+								Other vehicles
+							</a>
+						</li>
+					</ol>
+				</nav>
+			</aside>
+
+			<div id="content" class="container page">
+        		@content
+        	</div>
+        </div>
+        <footer>
+			<div class="container">
+				<p><small>© 2014 Slick Industries</small></p>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="@routes.Assets.at("javascripts/lib/jquery.1.11.0.min.js")"></script>
+		<script type="text/javascript" src="@routes.Assets.at("javascripts/site.common.js")"></script>
     </body>
 </html>
