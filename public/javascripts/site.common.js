@@ -50,7 +50,7 @@ $(document).ready(function () {
     			}
 
 				$("div.results-container").html("")
-				var content = "<h4>Your <strong>MoneySuperMarket</strong> quotes</h3><ol class=\"results-table quotes\">";
+				var content = "<h4 class=\"msm\">Your <strong>MoneySuperMarket</strong> quotes</h3><ol class=\"results-table quotes\">";
 				for (var i=0; i<results.length; i++) {  
 					content = content + results[i];
 				}

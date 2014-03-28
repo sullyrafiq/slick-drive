@@ -435,7 +435,7 @@ li.results-row {
 
 .details { display: none; }
 
-.details h4 {
+.details h4.price {
 	margin-top: 20px;
 	margin-bottom: 10px;
 	color: rgba(186, 69, 103, 1);
@@ -443,6 +443,8 @@ li.results-row {
 	font-weight: 900;
 	font-family: 'ProximaBold'
 }
+.details h4.msm { font-size: 1.4rem; padding: 15px 0; }
+.details h4 strong { font-size: 1.4rem; font-weight: 900; font-family: 'ProximaBold'; color: #00aeef; } 
 .details p { margin-bottom: 20px; }
 
 .details ol.results-table li.results-row.qoutes { padding: 10px; }
