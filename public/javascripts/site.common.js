@@ -37,13 +37,13 @@ $(document).ready(function () {
 					results.push( "<li class=\"logo\">" );    				
 					results.push( "<img alt=" + quote.coverType + " src=" + quote.logoUrl + " />" );    				
 					results.push( "</li>" );
-					results.push( "<li class=\"provider\"></li>" );
+					results.push( "<li class=\"provider\">" + quote.provider + "</li>" );
 					results.push( "<li class=\"cover-type\">" + quote.coverType +"</li>" );
 					results.push( "<li class=\"price\">" );
 					results.push( "<span>£" +  quote.premium +" </span>" );
 					results.push( "</li>" );
 					results.push( "<li class=\"buy\">" );
-					results.push( "<a href=" + quote.detailsUrl + ">Buy</a>" );
+					results.push( "<a class=\"button\" href=" + quote.detailsUrl + ">Buy</a>" );
 					results.push( "</li>" );
 					results.push( "</ul>" );
 					results.push( "</li>" );

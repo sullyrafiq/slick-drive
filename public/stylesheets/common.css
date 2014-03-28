@@ -438,8 +438,12 @@ li.results-row {
 .details h4 {
 	margin-top: 20px;
 	margin-bottom: 10px;
+	color: rgba(186, 69, 103, 1);
+	font-size: 1.4rem;
+	font-weight: 900;
+	font-family: 'ProximaBold'
 }
-.details h4 strong { font-family: 'ProximaBold'; font-size: 1.4rem; }
+.details p { margin-bottom: 20px; }
 
 .details ol.results-table li.results-row.qoutes { padding: 10px; }
 .details ol.results-table li.results-row li.logo { width: 100px; padding: 10px; text-align: center; }
