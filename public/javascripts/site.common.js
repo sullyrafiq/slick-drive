@@ -16,6 +16,7 @@ $(document).ready(function () {
 		$('div.details').fadeIn('slow');
 		$('.quotes').fadeIn('slow');
 
+		
 		var url = 'http://api.msmeco.co.uk/vehicles/insurance/a1';
 		$.ajax({
 			type: 'GET',
@@ -24,24 +25,41 @@ $(document).ready(function () {
 			contentType: "application/json",
     		dataType: 'jsonp',
     		success: function(json) {
-    			alert(json)
+				var results = [];
+				console.log(json);
+    			var quotes = json.motorQuotes;
+    			
+    			for (var i=0; i<quotes.length; i++) {    			    				
+    				var quote = quotes[i];
+
+					results.push( "<li class=\"results-row\">" );    				
+					results.push( "<ul>" );    				
+					results.push( "<li class=\"logo\">" );    				
+					results.push( "<img alt=" + quote.coverType + " src=" + quote.logoUrl + " />" );    				
+					results.push( "</li>" );
+					results.push( "<li class=\"provider\"></li>" );
+					results.push( "<li class=\"cover-type\">" + quote.coverType +"</li>" );
+					results.push( "<li class=\"price\">" );
+					results.push( "<span>£" +  quote.premium +" </span>" );
+					results.push( "</li>" );
+					results.push( "<li class=\"buy\">" );
+					results.push( "<a href=" + quote.detailsUrl + ">Buy</a>" );
+					results.push( "</li>" );
+					results.push( "</ul>" );
+					results.push( "</li>" );
+    			}
+
+				$("div.results-container").html("")
+				var content = "<h4>Your <strong>MoneySuperMarket</strong> quotes</h3><ol class=\"results-table quotes\">";
+				for (var i=0; i<results.length; i++) {  
+					content = content + results[i];
+				}
+				content = content + "</ol>"
+				$("div.results-container").append(content)
     		},
     		error: function(e) {
 		       alert(e.message);
 		    }
-
-			// var results = [];
-
-			// $.each(data, function(i){
-			// 	results.push( "<li id='" + i + "'>" + i.coverType + "</li>" );
-			// 	alert(key);
-			// });
-
-
-
-			// $( "<ul/>", {"class": "my-new-list",
-			// 	html: items.join( "" )
-  	// 		}).appendTo( "div.results-container" );            
 		});
 
 		return false;
